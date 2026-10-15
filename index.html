@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id" data-ac="blue">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Bysuncan</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+:root{--ac:#1A84FF;--ac2:#0A2FD0;--glow:rgba(20,130,255,.42);--cy:rgba(0,212,255,.30);--on:#fff;--bg:#04060F;--ink:#F3F2FA;--mu:#A09FB5;--ln:rgba(255,255,255,.09);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-ac="green"]{--ac:#34D399;--ac2:#0A7A4E;--glow:rgba(52,211,153,.36);--cy:rgba(52,211,153,.30);--on:#04281A}
+*{box-sizing:border-box}html{scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 Poppins,system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(620px 420px at 100% 0,var(--glow),transparent 70%),radial-gradient(520px 420px at 0 100%,var(--cy),transparent 70%)}
+a{color:inherit;text-decoration:none}:focus-visible{outline:3px solid var(--ac);outline-offset:3px;border-radius:10px}
+.w{max-width:1180px;margin:0 auto;padding:0 22px}
+.bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 26px;background:rgba(4,6,15,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--ln)}
+.logo{font-weight:700;font-size:19px;letter-spacing:-.01em}
+.bar nav{display:flex;gap:30px;overflow-x:auto;scrollbar-width:none}
+.bar nav a{font-weight:500;font-size:15px;white-space:nowrap;color:var(--ink);padding:4px 0;border-bottom:2px solid transparent;transition:color .2s}
+.bar nav a:hover{color:var(--ac)}.bar nav a.on{color:var(--ac);border-color:var(--ac);text-shadow:0 0 18px var(--ac)}
+.ctl{display:flex;align-items:center;gap:10px;flex:none}.lgs{display:flex;border:1px solid var(--ln);border-radius:999px;overflow:hidden}.lgs button{border:0;background:transparent;color:var(--mu);font:600 12px Poppins,sans-serif;padding:6px 11px;cursor:pointer}.lgs button[aria-pressed=true]{background:var(--ac);color:var(--on)}
+.sw{width:30px;height:30px;border-radius:50%;border:2px solid var(--ln);background:linear-gradient(135deg,var(--ac),var(--ac2));cursor:pointer;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 28px;border-radius:999px;font:600 15px Poppins,sans-serif;border:1.5px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .15s;background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);box-shadow:0 10px 30px -10px var(--glow)}
+.btn:hover{transform:translateY(-2px)}.btn.o{background:transparent;color:var(--ink);border-color:var(--ln);box-shadow:none}.btn.o:hover{border-color:var(--ac)}
+.page{display:none;padding-top:110px}.page.on{display:block}
+.pl{display:inline-block;padding:6px 16px;border:1px solid var(--ln);border-radius:999px;color:var(--ac);font-size:14px;font-weight:500;margin-bottom:22px;background:rgba(255,255,255,.03)}
+h1{font-size:clamp(34px,6.2vw,74px);line-height:1.06;margin:0 0 22px;font-weight:700;letter-spacing:-.03em;max-width:15ch}
+.lead{color:var(--mu);font-size:18px;max-width:50ch;margin:0 0 30px}.cta{display:flex;gap:14px;flex-wrap:wrap}
+.reel{position:relative;margin-top:56px;aspect-ratio:16/8;border-radius:36px;overflow:hidden;border:1px solid var(--ln);background:linear-gradient(160deg,#101733,#070A16);display:grid;place-items:center;text-align:center}
+.reel::before,.cd::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 260px at 100% 100%,var(--glow),transparent 70%);pointer-events:none}
+.reel iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.play{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;margin:0 auto 14px;box-shadow:0 0 50px var(--glow);position:relative}
+.play::after,.pb::after{content:"";border-left:22px solid var(--on);border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.tools span{padding:8px 18px;border:1px solid var(--ln);border-radius:999px;color:var(--mu);font-size:14px;background:rgba(255,255,255,.03)}
+section.s{padding-top:88px}
+h2{font-size:clamp(26px,3.6vw,40px);margin:0 0 10px;font-weight:700;letter-spacing:-.02em}.sub{color:var(--mu);max-width:56ch;margin:0 0 34px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.cd{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:6px;padding:22px;border-radius:32px;border:1px solid var(--ln);background:linear-gradient(160deg,#0F1530,#070A16);transition:transform .25s,border-color .25s}
+.cd:hover{transform:translateY(-6px);border-color:var(--ac)}.cd>*{position:relative}
+.th{aspect-ratio:16/10;border-radius:22px;background:linear-gradient(135deg,var(--ac2),#080C1E) center/cover;margin-bottom:12px;display:flex;align-items:flex-end;justify-content:flex-end;padding:12px;border:1px solid var(--ln)}
+.pb{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center}.pb::after{border-left-width:12px;border-top-width:8px;border-bottom-width:8px;margin-left:3px}
+.no{font-size:56px;font-weight:700;line-height:1;letter-spacing:-.04em}
+.cd h3{margin:4px 0 0;font-size:22px;font-weight:600;line-height:1.3}.mu{margin:0;color:var(--mu);font-size:14px}
+.ct{position:absolute!important;top:24px;right:24px;font-size:14px;font-weight:500;color:var(--ac)}
+.cd ul{margin:10px 0 0;padding-left:18px;color:var(--mu);font-size:14px}.cd .btn{align-self:flex-start;margin-top:16px;padding:10px 22px;font-size:14px}
+.sv{min-height:220px}.sv .no{font-size:48px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:88px}
+.stats div{padding:26px;border:1px solid var(--ln);border-radius:28px;background:rgba(255,255,255,.03)}
+.stats strong{display:block;font-size:38px;font-weight:700;letter-spacing:-.03em;color:var(--ac)}.stats span{color:var(--mu);font-size:14px}
+.band{position:relative;overflow:hidden;margin-top:88px;padding:52px;border-radius:36px;border:1px solid var(--ln);background:linear-gradient(135deg,#101733,#070A16);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.band::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 260px at 0 100%,var(--glow),transparent 70%)}.band>*{position:relative}.band h2{margin:0;max-width:18ch}
+.back{display:inline-block;margin-bottom:20px;font-weight:600;color:var(--ac)}.back::before{content:"←";margin-right:8px}.back:hover{text-shadow:0 0 16px var(--ac)}
+.det{display:grid;grid-template-columns:1.6fr 1fr;gap:30px;margin-top:26px}
+.hb{aspect-ratio:16/9;border-radius:28px;background:linear-gradient(135deg,var(--ac2),#080C1E);display:grid;place-items:center;text-align:center;padding:20px;font-size:26px;font-weight:700;border:1px solid var(--ln)}
+.vid{aspect-ratio:16/9;border-radius:28px;overflow:hidden;border:1px solid var(--ln);background:#000}.vid iframe{width:100%;height:100%;border:0;display:block}
+.pic{width:100%;border-radius:28px;display:block;border:1px solid var(--ln)}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:12px}.gal img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;display:block}
+.det h3{margin:28px 0 6px;font-size:20px;color:var(--ac)}.det p{margin:0;color:var(--mu)}
+.box{padding:26px;border:1px solid var(--ln);border-radius:28px;background:rgba(255,255,255,.04);align-self:start}
+.chips span{display:inline-block;margin:0 6px 6px 0;padding:4px 14px;border:1px solid var(--ln);border-radius:999px;font-size:13px;color:var(--ac)}
+.kt{display:grid;grid-template-columns:1fr 1.2fr;gap:28px}
+.fm{display:grid;gap:14px}.fm label{display:grid;gap:6px;font-weight:500;font-size:14px}
+.fm input,.fm textarea{font:inherit;padding:14px 16px;border-radius:16px;border:1px solid var(--ln);background:rgba(255,255,255,.04);color:var(--ink)}
+.fm input:focus,.fm textarea:focus{outline:0;border-color:var(--ac)}
+footer{margin-top:96px;border-top:1px solid var(--ln);padding:26px 0 38px;color:var(--mu);font-size:14px}footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media(max-width:860px){.g3,.stats{grid-template-columns:1fr 1fr}.det,.kt{grid-template-columns:1fr}.bar{padding:12px 16px;gap:12px}.bar nav{gap:18px}.reel{aspect-ratio:16/10}.band{padding:34px 26px}}
+@media(max-width:560px){.g3,.g2,.stats{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.collab{margin-top:52px}.collab .cl{margin:0 0 14px;font-weight:500;color:var(--mu);font-size:15px}.collab+.reel{margin-top:28px}
+.g2>.cd:last-child:nth-child(odd){grid-column:1/-1}.g3:has(>:nth-child(2):last-child){grid-template-columns:repeat(2,1fr)}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.sk{position:relative;overflow:hidden;padding:24px;border-radius:28px;border:1px solid var(--ln);background:linear-gradient(160deg,#0F1530,#070A16);display:flex;flex-direction:column;gap:8px;transition:transform .25s,border-color .25s}
+.sk:hover{transform:translateY(-5px);border-color:var(--ac)}.sk>*{position:relative}
+.sk::before{content:"";position:absolute;inset:0;background:radial-gradient(260px 160px at 100% 100%,var(--glow),transparent 70%);pointer-events:none}
+.lg{width:68px;height:68px;border-radius:18px;display:grid;place-items:center;font:700 27px Poppins,sans-serif;letter-spacing:-.04em;overflow:hidden;margin-bottom:8px;box-shadow:0 10px 26px -10px rgba(0,0,0,.8);border:1px solid var(--ln)}
+.lg img{width:100%;height:100%;object-fit:contain}.lg.sm{font-size:13px;letter-spacing:0}
+.ring{width:42px;height:42px;border-radius:50%;background:conic-gradient(#F0503C,#F7B731,#3DBE6B,#3A9BF0,#8E5CF0,#F0503C);-webkit-mask:radial-gradient(circle,transparent 0 44%,#000 46%);mask:radial-gradient(circle,transparent 0 44%,#000 46%)}
+.sk h3{margin:0;font-size:19px;font-weight:600;line-height:1.3}
+.mq2{display:grid;gap:14px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.row{display:flex;gap:14px;width:max-content;animation:mv 34s linear infinite}.row.r{animation-direction:reverse;animation-duration:40s}
+.mq2:hover .row{animation-play-state:paused}@keyframes mv{to{transform:translateX(-50%)}}
+.it{display:flex;align-items:center;gap:12px;padding:10px 24px 10px 10px;border-radius:999px;border:1px solid var(--ln);background:rgba(255,255,255,.04);white-space:nowrap;transition:border-color .2s}.it:hover{border-color:var(--ac)}
+.av{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;color:var(--on);background:linear-gradient(135deg,var(--ac),var(--ac2));overflow:hidden}.av img{width:100%;height:100%;object-fit:cover}
+.av.lo{background:#fff}.av.lo img{object-fit:contain;padding:9px}
+.it b{display:block;font-size:15px;font-weight:600;line-height:1.3}.it small{display:block;color:var(--mu);font-size:12px;line-height:1.2}
+@media(max-width:860px){.g4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.g4{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.row{animation:none;flex-wrap:wrap;width:auto;justify-content:center}}
+</style>
+</head>
+<body>
+<header class="bar"><a class="logo" href="#/">Bysuncan</a>
+<nav><a href="#/layanan" data-n="layanan">Layanan</a><a href="#/keahlian" data-n="keahlian">Keahlian</a><a href="#/proyek" data-n="proyek">Karya</a><a href="#/proses" data-n="proses">Proses</a><a href="#/kontak" data-n="kontak">Kontak</a></nav>
+<div class="ctl"><div class="lgs" role="group" aria-label="Language"><button id="lid" aria-pressed="true">ID</button><button id="len" aria-pressed="false">EN</button></div><button class="sw" id="sw" aria-label="Ganti warna tema"></button></div></header>
+
+<main class="w">
+<div class="page" data-p="home">
+<span class="pl">Videografer</span>
+<h1>Setiap momen layak dikenang dalam gambar Cinematic</h1>
+<p class="lead">Saya Bysuncan, videografer yang mengubah video, brand, dan cerita Anda menjadi rapi dan enak ditonton.</p>
+<div class="cta"><a class="btn" href="#/kontak">Mulai proyek</a><a class="btn o" href="#/proyek">Lihat karya</a></div>
+<div class="collab"><p class="cl">Brand dan creator yang pernah bekerja sama dengan saya</p><div class="mq2" id="m1"></div></div>
+<div class="reel" id="reel"></div>
+<div class="tools" id="tools"></div>
+<section class="s"><h2>Layanan</h2><p class="sub">Satu videografer, tiga layanan. Ambil satu atau gabungkan semuanya.</p><div class="g2" id="g1"></div></section>
+<section class="s"><h2>Keahlian</h2><p class="sub">Software yang saya pakai setiap hari untuk menyunting dan mengolah video.</p><div class="g4" id="k1"></div></section>
+<section class="s"><h2>Karya pilihan</h2><p class="sub">Pilih satu karya untuk membaca tantangan, solusi, dan hasilnya.</p><div class="g3" id="r1"></div></section>
+<div class="stats"><div><strong>8+</strong><span>tahun pengalaman</span></div><div><strong>500+</strong><span>proyek selesai</span></div><div><strong>24 jam</strong><span>batas waktu balasan</span></div></div>
+<div class="band"><h2>Siap bikin videonya?</h2><a class="btn" href="#/kontak">Kirim pesan</a></div>
+</div>
+
+<div class="page" data-p="layanan"><a class="back" href="#/">Kembali ke menu awal</a><h2>Layanan</h2><p class="sub">Dari merekam sampai rilis.</p><div class="g2" id="g2"></div></div>
+<div class="page" data-p="keahlian"><a class="back" href="#/">Kembali ke menu awal</a><h2>Keahlian</h2><p class="sub">Software yang saya pakai setiap hari untuk menyunting dan mengolah video.</p><div class="g4" id="k2"></div>
+<div class="band"><h2>Mau bekerja sama?</h2><a class="btn" href="#/kontak">Hubungi saya</a></div></div>
+<div class="page" data-p="proyek"><a class="back" href="#/">Kembali ke menu awal</a><h2>Karya</h2><p class="sub">Contoh pekerjaan. Ganti dengan karya asli Anda.</p><div class="g3" id="r2"></div></div>
+<div class="page" data-p="detail" id="det"></div>
+<div class="page" data-p="proses"><a class="back" href="#/">Kembali ke menu awal</a><h2>Cara kerja</h2><p class="sub">Empat langkah dari ide sampai video final.</p><div class="g2" id="tl"></div></div>
+<div class="page" data-p="kontak"><a class="back" href="#/">Kembali ke menu awal</a><div class="kt"><div><h2>Ceritakan kebutuhan video Anda</h2><p class="sub">Kami membalas dalam 24 jam dengan estimasi awal.</p><a class="btn" id="wa" href="#" target="_blank" rel="noopener">Chat WhatsApp</a><p class="sub" style="margin-top:22px">Indonesia</p></div>
+<form class="box fm" id="cf"><label>Nama<input name="n" required autocomplete="name"></label><label>Kebutuhan Anda<textarea name="m" rows="5" required></textarea></label><button class="btn" type="submit">Kirim lewat WhatsApp</button><p id="cm" role="status" style="margin:0;color:var(--ac);font-weight:500"></p></form></div></div>
+</main>
+<footer><div class="w"><span>© 2026 Bysuncan</span><span><a href="#/layanan">Layanan</a> &nbsp; <a href="#/keahlian">Keahlian</a> &nbsp; <a href="#/proyek">Karya</a> &nbsp; <a href="#/kontak">Kontak</a></span></div></footer>
+
+<script>
+var WA="6281234567890"; /* nomor WhatsApp: awali 62, tanpa 0 dan tanpa + (contoh: 6281234567890) */
+var SHOWREEL="EngPsM8VnzM"; /* tempel kode YouTube showreel di sini, contoh: "aB3dEf9GhIj" */
+var S=[["Video komersial","Iklan, profil bisnis, dan konten produk untuk brand Anda.",["Video profil","Iklan produk","Versi vertikal sosmed"]],
+["Event dan dokumentasi","Liputan seminar dan acara perusahaan.",["Multi kamera","Highlight cepat","Dokumentasi penuh"]],
+["Editing","Penyuntingan dan color grading.",["Editing","Color grading"]]];
+/* P: [judul, ringkasan, tag, tantangan, solusi, hasil, foto sampul, kode YouTube, galeri[], kategori, alat] */
+var P=[["Video profil brand","Video promosi untuk usaha lokal.",["KOMERSIAL","SOSMED"],"Brand ingin tampil profesional tetapi belum punya konten video.","Konsep, naskah singkat, pengambilan gambar produk, dan versi vertikal untuk media sosial.","Konten siap tayang untuk Instagram dan TikTok dalam satu paket.","","",[],"Komersial","Sony FX30, Premiere Pro"],
+["Aerial dan event","Dokumentasi acara dengan penyuntingan cepat.",["EVENT"],"Acara besar sulit ditangkap dari satu sudut saja.","Kombinasi kamera tangan dan gimbal dengan penyuntingan cepat.","Video acara siap dibagikan beberapa hari setelah acara.","","",[],"Event","After Effects"]];
+var T=[["Diskusi","Kita bahas konsep, lokasi, dan jadwal syuting."],["Rancang","Anda menyetujui storyboard dan daftar shot."],["Syuting dan edit","Pengambilan gambar, lalu penyuntingan dan color grading."],["Rilis","Video final dikirim, revisi kecil sudah termasuk."]];
+function $(i){return document.getElementById(i)}
+function n2(i){return "0"+(i+1)}
+function card(p,i){return '<a class="cd" href="#/proyek/'+(i+1)+'"><div class="th"'+(p[6]?' style="background-image:url('+p[6]+')"':'')+'>'+(p[7]?'<span class="pb"></span>':'')+'</div><span class="ct">'+p[9]+'</span><div class="no">'+n2(i)+'</div><h3>'+p[0]+'</h3><p class="mu">Alat yang dipakai: '+p[10]+'</p></a>'}
+function sv(d){return S.map(function(s,i){return '<div class="cd sv"><div class="no">'+n2(i)+'</div><h3>'+s[0]+'</h3><p class="mu">'+s[1]+'</p>'+(d?'<ul>'+s[2].map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul><a class="btn" href="#/kontak">Tanya layanan ini</a>':'')+'</div>'}).join("")}
+$("tools").innerHTML=["Premiere Pro","DaVinci Resolve","After Effects","Sony","DJI","Color grading"].map(function(x){return "<span>"+x+"</span>"}).join("");
+/* SK: [nama, teks logo, warna latar, warna teks, (tidak dipakai), deskripsi, file logo resmi (opsional)] */
+var SK=[["Adobe Premiere Pro","Pr","#00005B","#EA77FF",90,"Penyuntingan video utama untuk semua proyek.",""],
+["Adobe After Effects","Ae","#00005B","#9999FF",80,"Motion graphics, teks animasi, dan efek visual.",""],
+["DaVinci Resolve","RING","#0F0F14","#fff",85,"Color grading dan finishing sinematik.",""],
+["CapCut","CapCut","#000","#fff",75,"Editing cepat untuk konten vertikal sosmed.",""]];
+/* KB dan KC: [nama, jenis, file logo/foto (opsional)]. Ganti dengan brand dan creator asli. */
+var KB=[["DJI","Brand","data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMTExIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+REpJPC90aXRsZT48cGF0aCBkPSJNMTkuMiA3LjhhNzE2Ljg1NiA3MTYuODU2IDAgMCAwLTEuMjMyIDQuNjNjLS4yMDIuNzcyLS40MDEgMS41NDQtLjYzNCAyLjMwOC0uMjI2Ljc0My0uNTA0IDEuNTM1LS45MSAyLjIxLS40MjIuNzAzLS45NjkgMS4yNTMtMS43MjYgMS42MDQtLjMuMTM3LS42MTUuMjQtLjkzOS4zMDYtLjQ2LjA5LS45MjYuMTQ2LTEuMzk0LjE2NS0xLjE2My4wNjUtMy42MjguMDU2LTQuNzkuMDU2bC43MTMtMi42NGMuNTM5IDAgMS4wNzguMDAyIDEuNjE3LS4wMTMuNTItLjAxNCAxLjA5Mi0uMDQyIDEuNjA1LS4xNjMuNTYtLjEzMy45ODQtLjM2IDEuMzU1LS44MTcuMzM3LS40MTYuNTY0LS45MzUuNzUtMS40MjQuMzQtLjg5My42ODgtMi4xNzMuOTM0LTMuMDkzLjI3Ny0xLjA0MS41NDQtMi4wODUuODEyLTMuMTI5em00LjggMC0yLjA3MiA3LjY4aC0zLjg0bDIuMDczLTcuNjhaTTExLjMzOSA0LjkyaDMuODRjLS40MDMgMS41LS44MDUgMi45OTktMS4yMTIgNC40OTYtLjI4MyAxLjA0NC0uNTY1IDIuMDg4LS44NzIgMy4xMjQtLjEzNS40NTItLjI2OS45MDMtLjQ0NSAxLjM0Mi0uMTQxLjM1Mi0uMy42NjYtLjU5MS45M2ExLjkwOCAxLjkwOCAwIDAgMS0uNzM0LjQwNWMtLjM1Ni4xMTItLjcxNy4xNTQtMS4wODUuMTg0LS41My4wNDMtMS4wNi4wNTQtMS41OTEuMDYzLTEuOTkxLjAyLTMuOTgzLjAyLTUuOTc0LS4wMDFhMjEuNDA4IDIxLjQwOCAwIDAgMS0uOTU0LS4wMzQgNS4zMTkgNS4zMTkgMCAwIDEtLjYzMi0uMDcgMS44NTEgMS44NTEgMCAwIDEtLjQxMi0uMTE5Yy0uNDQtLjE5Mi0uNjY0LS41NzUtLjY3Ny0xLjA0MyAwLS4yNjMuMDMyLS41MjUuMDkzLS43OC4wNzYtLjM2Ny4xNzEtLjcyOC4yNjUtMS4wOS4xNzktLjY5MS41MDYtMS45NjYuNzYyLTIuNjM4LjItLjUyNi40NjQtMS4wNS45NjYtMS4zODIuMjgtLjE4Ni41NzYtLjI4NS45MDEtLjM1LjI0MS0uMDUuNDgzLS4wNzUuNzI4LS4wOTMuNDEtLjAzLjgyLS4wNCAxLjIzLS4wNDcuNTgyLS4wMSAxLjE2NS0uMDEzIDEuNzQ4LS4wMTVMOC4xNDggNy44aDEuNDU0bC0uNTE4IDEuOTJjLS44NjQgMC0xLjcyOC0uMDAyLTIuNTkzLjAwMy0uMjUyLjAwMS0uNTA0IDAtLjc1Ni4wMTZhLjk2OC45NjggMCAwIDAtLjI2NC4wNDJjLS4xMTMuMDQtLjE3LjExLS4yMi4yMTMtLjA3My4xNS0uMTE1LjMxLS4xNjIuNDY4YTg0LjgwNCA4NC44MDQgMCAwIDAtLjUwMyAxLjg1N2MtLjAzNS4xNC0uMDcuMjgtLjEuNDItLjAyMi4wOTktLjA0LjE5Ny0uMDUuMjk4LS4wMS4xMS0uMDE0LjI0Mi4wNTMuMzQ1LjA2OC4xMDMuMTgyLjEyNy4yOS4xNDMuMTIuMDE4LjI0MS4wMjEuMzYzLjAyNS4xOTkuMDA2LjM5OC4wMDcuNTk3LjAwOC41NDQuMDAzIDEuMDg5LjAwMyAxLjYzMyAwIC4yNS0uMDAyLjUwMS0uMDA0Ljc1Mi0uMDE0LjE3My0uMDA3LjM0My0uMDEzLjUxMy0uMDU0LjEzLS4wMzEuMjMtLjA4LjMxOC0uMTg2LjA1Ni0uMDcxLjEtLjE1LjEzMy0uMjM1LjA4OC0uMjA5LjE1LS40MjUuMjEzLS42NDEuMjQ1LS44My40NjYtMS42NjUuNjkyLTIuNDk5bC42NzUtMi41MDMuNjctMi41MDVoMy44NHoiLz48L3N2Zz4="],["Insta360","Brand","data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMTExIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+SW5zdGEzNjA8L3RpdGxlPjxwYXRoIGQ9Ik0xNS40MDIgMTEuMTljLS43MDEuNy0xLjgzOC43LTIuNTQgMGExLjc5NiAxLjc5NiAwIDEgMSAyLjUzOSAwbS45OTgtMy42MTRhNi4xNyA2LjE3IDAgMCAwLTQuMzktMS44MTggNi4xNyA2LjE3IDAgMCAwLTQuMzkyIDEuODE4IDYuMjE3IDYuMjE3IDAgMCAwIDAgOC43ODIgNi4xNjkgNi4xNjkgMCAwIDAgNC4zOSAxLjgxOSA2LjE2OSA2LjE2OSAwIDAgMCA0LjM5Mi0xLjgyIDYuMjE3IDYuMjE3IDAgMCAwIDAtOC43OG0xLjU1NCAxMC4zM2E4LjM1MyA4LjM1MyAwIDAgMS01Ljk0NSAyLjQ2MiA4LjM1MyA4LjM1MyAwIDAgMS01Ljk0NC0yLjQ2Yy0zLjI3Ny0zLjI3Ny0zLjI3Ny04LjYwNyAwLTExLjg4M2E4LjM1MyA4LjM1MyAwIDAgMSA1Ljk0NC0yLjQ2IDguMzUgOC4zNSAwIDAgMSA1Ljk0NCAyLjQ2YzMuMjc4IDMuMjc2IDMuMjc4IDguNjA2IDAgMTEuODgybTQuNTEtMTEuMjkzYTIwLjgxIDIwLjgxIDAgMCAxLS4xMzctLjI5MiAyLjc3OSAyLjc3OSAwIDAgMSAuNDg1LTMuMDA3Yy4wMTgtLjAxNC4wOC0uMDguMTE3LS4xMThhLjQxMi40MTIgMCAwIDAgLjA1My0uMDY5LjY2LjY2IDAgMCAwLS4wOTctLjgxLjI5Ni4yOTYgMCAwIDAtLjAyNi0uMDIgMS4xMTMgMS4xMTMgMCAwIDAtLjE4LS4xMWwtLjA2OC0uMDM0QTE5LjA4IDE5LjA4IDAgMCAwIDkuNzEuNDQzbC0uMDE2LjAyMmExMS43MDggMTEuNzA4IDAgMCAwLTYuMDEyIDMuMjE4Yy0zLjc1IDMuNzUtNC40NCA5LjQwMy0yLjA2NSAxMy44NTIuMDIzLjA0My4xMDcuMTk1LjEyMy4yMzNhMi43NzggMi43NzggMCAwIDEtLjU1NiAyLjkxOSA0LjM5IDQuMzkgMCAwIDAtLjA3Mi4wOC42Ni42NiAwIDAgMCAwIC45MzRjLjA2LjA1Ni4xMjcuMTA1LjE5OC4xNDZsLjAxLjAwNmExOS4wOCAxOS4wOCAwIDAgMCAxMyAxLjY3N3YuMDAyYTExLjcwOCAxMS43MDggMCAwIDAgNS45OTctMy4yMTZjMy43MDktMy43MDggNC40MjMtOS4yNzcgMi4xNDQtMTMuNzAyIi8+PC9zdmc+"],["Lavio","Brand","https://down-id.img.susercontent.com/file/id-11134233-7r98p-llju0gpb1icx5b"],["HOLLYLAND","Brand","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ-r6E7vUSf1Rp7mQcYeMwL3vlqkR3g-MabbwTE9tlFw&s=10"],["VILTROX","Brand","https://upload.wikimedia.org/wikipedia/commons/2/2c/Viltrox-logo-s-U-E--2a67fab9-1920w.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"],["Brand 06","Brand",""]];
+var KC=[["@ndarboy_genk","Artist","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaa7gBqEsRi4gyjaBSAjfJ5eORvOcJvqiFsDgsar1Oiw&s=10"],["@creator_02","Creator",""],["@creator_03","Creator",""],["@creator_04","Creator",""],["@creator_05","Creator",""],["@creator_06","Creator",""]];
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+function skl(){return SK.map(function(s){var g=s[6]?'<img src="'+s[6]+'" alt="">':s[1]=="RING"?'<span class="ring"></span>':s[1];return '<div class="sk"><div class="lg'+(s[1].length>3&&s[1]!="RING"?' sm':'')+'" style="background:'+s[2]+';color:'+s[3]+'">'+g+'</div><h3>'+s[0]+'</h3><p class="mu" style="margin:0">'+s[5]+'</p></div>'}).join("")}
+function mq(a,r){var h=a.map(function(x){var i=x[0].replace("@","").slice(0,2).toUpperCase();return '<div class="it"><span class="av'+(x[2]?' lo':'')+'">'+(x[2]?'<img src="'+x[2]+'" alt="">':i)+'</span><div><b>'+x[0]+'</b><small>'+x[1]+'</small></div></div>'}).join("");return '<div class="row'+(r?' r':'')+'">'+h+(RM?'':h)+'</div>'}
+function mqs(){return mq(KB,0)+mq(KC,1)}
+
+function rd(){$("r1").innerHTML=P.map(card).join("");$("r2").innerHTML=P.map(card).join("");
+$("g1").innerHTML=sv(0);$("g2").innerHTML=sv(1);
+$("tl").innerHTML=T.map(function(t,i){return '<div class="cd sv"><div class="no">'+n2(i)+'</div><h3>'+t[0]+'</h3><p class="mu">'+t[1]+'</p></div>'}).join("");
+$("reel").innerHTML=SHOWREEL
+? '<iframe src="https://www.youtube.com/embed/'+SHOWREEL+'?rel=0" title="Showreel Bysuncan" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+: '<div style="position:relative"><div class="play"></div><strong style="font-size:20px">Showreel Bysuncan</strong><p class="mu" style="margin:4px 0 0">Segera hadir</p></div>';
+$("k1").innerHTML=$("k2").innerHTML=skl();$("m1").innerHTML=mqs();}
+/* ===== Bahasa / Language: terjemahan Inggris. Ubah teks Indonesia di atas, lalu sesuaikan versi Inggris di sini ===== */
+var S0=S,P0=P,T0=T,SK0=SK,L="id",TS=new WeakMap();
+var S1=[["Commercial video","Ads, business profiles, and product content for your brand.",["Profile video","Product ads","Vertical social versions"]],["Events and documentation","Coverage of seminars and corporate events.",["Multi-camera","Quick highlights","Full documentation"]],["Editing","Editing and color grading.",["Editing","Color grading"]]];
+var T1=[["Discussion","We discuss the concept, location, and shoot schedule."],["Plan","You approve the storyboard and shot list."],["Shoot and edit","Filming, then editing and color grading."],["Release","Final video delivered, minor revisions included."]];
+/* EP: [judul, ringkasan, tag, tantangan, solusi, hasil, kategori, alat] per karya */
+var EP=[["Brand profile video","Promotional video for a local business.",["COMMERCIAL","SOCIAL MEDIA"],"The brand wanted to look professional but had no video content yet.","Concept, short script, product shots, and vertical versions for social media.","Ready-to-post content for Instagram and TikTok in one package.","Commercial","Sony FX30, Premiere Pro"],["Aerial and events","Event documentation with quick editing.",["EVENT"],"A large event is hard to capture from a single angle.","A mix of handheld camera and gimbal with fast editing.","Event video ready to share a few days after the event.","Event","After Effects"]];
+var ES=["Main video editing for every project.","Motion graphics, animated text, and visual effects.","Color grading and cinematic finishing.","Fast editing for vertical social content."];
+var M={"Kembali ke menu awal":"Back to home","Layanan":"Services","Keahlian":"Skills","Karya":"Work","Proses":"Process","Kontak":"Contact","Videografer":"Videographer","Setiap momen layak dikenang dalam gambar Cinematic":"Every moment deserves to be remembered in cinematic frames","Saya Bysuncan, videografer yang mengubah video, brand, dan cerita Anda menjadi rapi dan enak ditonton.":"I'm Bysuncan, a videographer who turns your videos, brands, and stories into polished work that's a pleasure to watch.","Mulai proyek":"Start a project","Lihat karya":"See my work","Brand dan creator yang pernah bekerja sama dengan saya":"Brands and creators I've worked with","Satu videografer, tiga layanan. Ambil satu atau gabungkan semuanya.":"One videographer, three services. Pick one or combine them all.","Software yang saya pakai setiap hari untuk menyunting dan mengolah video.":"The software I use every day to edit and process video.","Karya pilihan":"Featured work","Pilih satu karya untuk membaca tantangan, solusi, dan hasilnya.":"Pick a project to read the challenge, solution, and result.","tahun pengalaman":"years of experience","proyek selesai":"projects completed","24 jam":"24 hours","batas waktu balasan":"reply time limit","Siap bikin videonya?":"Ready to make your video?","Kirim pesan":"Send a message","Dari merekam sampai rilis.":"From shooting to release.","Mau bekerja sama?":"Want to work together?","Hubungi saya":"Contact me","Contoh pekerjaan. Ganti dengan karya asli Anda.":"Sample projects.","Cara kerja":"How it works","Empat langkah dari ide sampai video final.":"Four steps from idea to final video.","Ceritakan kebutuhan video Anda":"Tell me about your video needs","Kami membalas dalam 24 jam dengan estimasi awal.":"We reply within 24 hours with an initial estimate.","Chat WhatsApp":"Chat on WhatsApp","Nama":"Name","Kebutuhan Anda":"Your needs","Kirim lewat WhatsApp":"Send via WhatsApp","Tanya layanan ini":"Ask about this service","Kembali ke karya":"Back to work","Tantangan":"Challenge","Solusi":"Solution","Hasil":"Result","Galeri foto":"Photo gallery","Alat yang dipakai":"Tools used","Buat video serupa":"Get a similar video","Segera hadir":"Coming soon"};
+function tx(r){var w=document.createTreeWalker(r,NodeFilter.SHOW_TEXT),n,a=[];while(n=w.nextNode())a.push(n);a.forEach(function(n){if(/^(SCRIPT|STYLE)$/.test(n.parentNode.nodeName))return;var o=TS.has(n)?TS.get(n):n.nodeValue,t=o.trim();if(!t)return;if(L=="en"){var e=M[t];if(e===undefined&&t.indexOf("Alat yang dipakai: ")==0)e="Tools used: "+t.slice(19);if(e!==undefined){TS.set(n,o);n.nodeValue=o.replace(t,e)}}else if(TS.has(n)){n.nodeValue=TS.get(n)}})}
+function wl(){$("wa").href="https://wa.me/"+WA+"?text="+encodeURIComponent(L=="en"?"Hello Bysuncan, I'd like to ask about your videography services.":"Halo Bysuncan, saya ingin bertanya tentang jasa videografi.")}
+function sl(l){L=l;var en=l=="en";S=en?S1:S0;T=en?T1:T0;
+P=en?P0.map(function(p,i){var e=EP[i],q=p.slice();if(e)[0,1,2,3,4,5,9,10].forEach(function(k,j){if(e[j])q[k]=e[j]});return q}):P0;
+SK=en?SK0.map(function(s,i){var q=s.slice();if(ES[i])q[5]=ES[i];return q}):SK0;
+document.documentElement.lang=l;$("lid").setAttribute("aria-pressed",!en);$("len").setAttribute("aria-pressed",en);
+try{localStorage.setItem("lang",l)}catch(e){}
+rd();wl();show();tx(document.body)}
+$("lid").onclick=function(){sl("id")};$("len").onclick=function(){sl("en")};
+var l0="id";try{l0=localStorage.getItem("lang")=="en"?"en":"id"}catch(e){}
+function md(p){if(p[7])return '<div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/'+p[7]+'" title="'+p[0]+'" loading="lazy" allowfullscreen></iframe></div>';if(p[6])return '<img class="pic" src="'+p[6]+'" alt="'+p[0]+'">';return '<div class="hb">'+p[0]+'</div>'}
+function gl(p){return p[8]&&p[8].length?'<h3>Galeri foto</h3><div class="gal">'+p[8].map(function(u){return '<img src="'+u+'" alt="Foto '+p[0]+'" loading="lazy">'}).join("")+'</div>':""}
+function show(){var h=(location.hash||"#/").slice(2).split("/"),pg=h[0]||"home",p=P[h[1]-1];
+if(pg=="proyek"&&p){pg="detail";$("det").innerHTML='<a class="back" href="#/proyek">Kembali ke karya</a><h2>'+p[0]+'</h2><div class="det"><div>'+md(p)+'<h3>Tantangan</h3><p>'+p[3]+'</p><h3>Solusi</h3><p>'+p[4]+'</p><h3>Hasil</h3><p>'+p[5]+'</p>'+gl(p)+'</div><div class="box"><strong>Alat yang dipakai</strong><p style="margin:6px 0 14px">'+p[10]+'</p><div class="chips">'+p[2].map(function(t){return '<span>'+t+'</span>'}).join("")+'</div><a class="btn" style="margin-top:12px" href="#/kontak">Buat video serupa</a></div></div>';tx($("det"))}
+if(!document.querySelector('[data-p="'+pg+'"]'))pg="home";
+document.querySelectorAll(".page").forEach(function(e){e.classList.toggle("on",e.dataset.p==pg)});
+document.querySelectorAll("[data-n]").forEach(function(a){a.classList.toggle("on",a.dataset.n==h[0])});
+document.title=p?p[0]+" | Bysuncan":"Bysuncan";window.scrollTo(0,0)}
+var A=["blue","green"],ai=0;try{ai=A.indexOf(localStorage.getItem("ac"))}catch(e){}if(ai<0)ai=0;
+function ap(){document.documentElement.setAttribute("data-ac",A[ai])}
+$("sw").onclick=function(){ai=(ai+1)%2;ap();try{localStorage.setItem("ac",A[ai])}catch(e){}};ap();
+$("cf").onsubmit=function(e){e.preventDefault();var f=e.target,u="https://wa.me/"+WA+"?text="+encodeURIComponent((L=="en"?"Hello Bysuncan, I am ":"Halo Bysuncan, saya ")+f.n.value+".\n\n"+f.m.value);$("cm").textContent=L=="en"?"Thank you. WhatsApp will open to send this message.":"Terima kasih. WhatsApp akan terbuka untuk mengirim pesan ini.";if(!window.open(u,"_blank","noopener"))location.href=u};
+window.onhashchange=show;sl(l0);
+</script>
+</body>
+</html>
